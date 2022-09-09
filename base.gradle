@@ -27,6 +27,7 @@ android {
         buildConfigField "String", "SETTINGS_ENCRYPT_SECRET", "\"${project.settingsEncryptSecret}\""
         buildConfigField "String", "SHARING_SERVER_SECRET", "\"${project.sharingServerSecret}\""
 
+        buildConfigField "String", "GOOGLE_SIGN_IN_SERVER_CLIENT_ID", "\"${project.properties["googleSignInServerClientId"] ?: ""}\""
         testInstrumentationRunner project.testInstrumentationRunner
         testApplicationId "au.com.shiftyjelly.pocketcasts.test" + project.name.replace("-", "_")
         vectorDrawables.useSupportLibrary = true
@@ -195,6 +196,7 @@ dependencies {
     implementation androidLibs.composeLiveData
     implementation androidLibs.composeNavigation
     implementation androidLibs.composeRx
+    implementation androidLibs.auth
 
     implementation libs.kotlinCoroutines
     implementation libs.kotlinCoroutinesAndroid
